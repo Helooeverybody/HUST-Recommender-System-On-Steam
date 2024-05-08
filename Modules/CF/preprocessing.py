@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from collections import namedtuple
+from typing import Literal
 
 DataFrame = pd.DataFrame
 NDArray = np.ndarray
@@ -79,13 +80,28 @@ class PreProcessing:
 
         return X, y, M, ui_shape
 
-    def split(X, y, train_proportion: float, shuffle=False) -> tuple[NDArray]:
+    def split(
+        X, y, train_proportion: float, by=Literal["user", "item"] | None, shuffle=False
+    ) -> tuple[NDArray]:
         data_size = len(X)
-        idx = np.arange(data_size)
-        if shuffle:
-            np.random.shuffle(idx)
-        train_idx = idx[: int(train_proportion * data_size)]
-        test_idx = idx[int(train_proportion * data_size) :]
+        index = np.arange(data_size)
+        if by is None:
+            if shuffle:
+                np.random.shuffle(index)
+            train_idx = index[: int(train_proportion * data_size)]
+            test_idx = index[int(train_proportion * data_size) :]
+        else:
+            k = 0 if by == "user" else 1
+            train_idx = np.array([], dtype="int64")
+            test_idx = np.array([], dtype="int64")
+            for i in np.unique(X[:, k]):
+                idx = index[X[:, k] == i]
+                if shuffle:
+                    np.random.shuffle(idx)
+                at = int(np.ceil(train_proportion * len(idx)))
+                train_idx = np.concatenate((train_idx, idx[:at]))
+                test_idx = np.concatenate((test_idx, idx[at:]))
+
         X_train, y_train = X[train_idx], y[train_idx]
         X_test, y_test = X[test_idx], y[test_idx]
         return X_train, y_train, X_test, y_test
