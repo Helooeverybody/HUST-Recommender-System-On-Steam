@@ -42,19 +42,21 @@ class PreProcessing:
         )
         return M, shape
 
-    def data_from_matrix(train_data, test_data):
+    def data_from_matrix(train_data, test_data: NDArray | None = None):
         M, shape = PreProcessing.get_mapper_and_shape(train_data, test_data)
         X_train = np.apply_along_axis(
             lambda x: (M.user_to_index[x[0]], M.item_to_index[x[1]]),
             axis=1,
             arr=train_data,
         )
-        X_test = np.apply_along_axis(
-            lambda x: (M.user_to_index[x[0]], M.item_to_index[x[1]]),
-            axis=1,
-            arr=test_data,
-        )
-        return X_train, X_test, shape
+        if test_data is not None:
+            X_test = np.apply_along_axis(
+                lambda x: (M.user_to_index[x[0]], M.item_to_index[x[1]]),
+                axis=1,
+                arr=test_data,
+            )
+            return X_train, X_test, shape
+        return X_train, shape
 
     def data_from_csv(fname: str) -> tuple[NDArray, NDArray, Mapping, tuple[int, int]]:
         """File structure: user_id, app_id, title, rating"""
