@@ -1,0 +1,14 @@
+Please download the source data from kaggle first.
+Run the Preprocess/preprocessing.py file to generate data.
+
+Folder format: 
+
+name: steam_{review count lower limit} 
+    Ex: steam_40 will have >=40 reviews for each users
+
+games.csv
+data/steam_60/recommendations.csv
+data/steam_60/users.csv
+data/steam_60/games_metadata.json
+data/steam_60/mapping.json
+data/steam_60/steam_60.txt
