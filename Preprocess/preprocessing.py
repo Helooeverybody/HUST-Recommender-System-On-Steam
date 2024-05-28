@@ -19,17 +19,25 @@ ratings = [2, 2.5, 3, 3.5, 4]
 class Preprocessor:
     """Collection of preprocess functions."""
 
-    def _assign_rating(hours, is_recommended) -> float:
-        """Helper function to assign rating"""
+    def assign_rating(hours: float, is_recommended: bool) -> float:
+        """Helper function to assign rating
+        based on hours played and implicit ratings.
+        ### Returns:
+            float rating
+                In the range 1 to 5
+        """
         for start, rating in zip(hours_intervals, ratings):
-            if hours >= start:
+            if start <= hours:
                 from_hour = rating
+            else:
                 break
         return from_hour + 2 * is_recommended - 1
 
-    def generate_data_folder(review_limit: int = 40) -> None:
+    def generate_data_folder(
+        review_limit: int = 40, folder: str = "./data/steam_40"
+    ) -> None:
+        """Extract data from source based on review limit into a folder."""
         assert isinstance(review_limit, int)
-        folder = data_folder + f"/steam_{review_limit}"
         # Create directory if not exist
         if not os.path.isdir(folder):
             os.makedirs(folder)
@@ -78,6 +86,7 @@ class Preprocessor:
         print(f"Done -> {line_count} dicts")
 
     def generate_user_item_ratings(folder: str):
+        """Generate user-item ratings data and mapping from a data folder for CF."""
         recs = pd.read_csv(folder + "/recommendations.csv")[
             ["user_id", "app_id", "hours", "is_recommended"]
         ]
@@ -105,7 +114,7 @@ class Preprocessor:
         users = [mapping["user_to_index"][int(user)] for user in recs["user_id"]]
         items = [mapping["item_to_index"][int(item)] for item in recs["app_id"]]
         ratings = [
-            Preprocessor._assign_rating(hours, is_recommended)
+            Preprocessor.assign_rating(hours, is_recommended)
             for (hours, is_recommended) in zip(recs["hours"], recs["is_recommended"])
         ]
         data = np.concatenate([[users], [items], [ratings]], axis=0, dtype="object").T
@@ -118,9 +127,9 @@ class Preprocessor:
         X: user-item pairs
         y: ratings
         ui_shape: shape of the user-item matrix"""
-        data = np.loadtxt(fname, dtype="int")
-        X = data[:, :2]
-        y = data[:, 2].T
+        data = np.loadtxt(fname, dtype="object")
+        X = data[:, :2].astype("int")
+        y = data[:, 2].astype("float").T
         num_user = len(np.unique(X[:, 0]))
         num_item = len(np.unique(X[:, 1]))
         return X, y, (num_user, num_item)
@@ -132,6 +141,7 @@ class Preprocessor:
         by=Literal["user", "item"] | None,
         shuffle=False,
     ) -> tuple[NDArray]:
+        """Split data equally based on users (or items) into train and test data."""
         data_size = len(X)
         index = np.arange(data_size)
         if by is None:
@@ -158,5 +168,6 @@ class Preprocessor:
 
 if __name__ == "__main__":
     limit = int(input("Review limit: "))
-    Preprocessor.generate_data_folder(limit)
-    Preprocessor.generate_user_item_ratings(f"./data/steam_{limit}")
+    folder_name = f"./data/steam_{limit}"
+    Preprocessor.generate_data_folder(limit, folder_name)
+    Preprocessor.generate_user_item_ratings(folder_name)

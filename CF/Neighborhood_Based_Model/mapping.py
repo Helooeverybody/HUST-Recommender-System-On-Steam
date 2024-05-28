@@ -1,7 +1,7 @@
 import json
 
 
-class Mapping:
+class Mapper:
     """Mapping object used for CF.
     ### Attributes:
     - user_to_index: map each user_id to an user index
@@ -18,11 +18,11 @@ class Mapping:
         self.user_to_index = json_obj["user_to_index"]
         self.index_to_user = json_obj["index_to_user"]
         self.item_to_index = json_obj["item_to_index"]
-        self.index_to_item = json_obj["user_to_index"]
-        self.item_to_name = json_obj["user_to_index"]
+        self.index_to_item = json_obj["index_to_item"]
+        self.item_to_name = json_obj["item_to_name"]
 
 
 if __name__ == "__main__":
-    M = Mapping("data/steam_60/mapping.json")
+    M = Mapper("data/steam_60/mapping.json")
     print("Users:", len(M.user_to_index))
     print("Items:", len(M.item_to_index))
