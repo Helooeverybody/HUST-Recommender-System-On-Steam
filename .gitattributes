@@ -1,3 +1,0 @@
-*.psd filter=lfs diff=lfs merge=lfs -text
-C:/Users/Acer/OneDrive/Desktop/git[[:space:]]local/HUST-Recommender-System-On-Steam/data.zip filter=lfs diff=lfs merge=lfs -text
-C:/Users/Acer/OneDrive/Desktop/git[[:space:]]local/HUST-Recommender-System-On-Steam/CF/Latent_Factor_Model/preprocessed_data.zip filter=lfs diff=lfs merge=lfs -text
