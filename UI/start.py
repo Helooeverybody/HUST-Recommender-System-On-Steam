@@ -8,16 +8,16 @@ import pandas as pd
 st.set_page_config(layout="wide")
 @st.cache_data
 def reduced_game_load():
-    with open("data/reduced_games_with_clusters.pkl","rb") as f:
+    with open("UI/data/reduced_games_with_clusters.pkl","rb") as f:
         return pickle.load(f)
 @st.cache_data
 def load_game_data():
-    with open("data/50000_games.pkl","rb") as game_pkl:
+    with open("UI/data/50000_games.pkl","rb") as game_pkl:
         data=pickle.load(game_pkl)
     return data
 @st.cache_data
 def load_ratings_data():
-    with open("data/processed_rec.pkl","rb") as f:
+    with open("CB/data/processed_rec.pkl","rb") as f:
         data=pickle.load(f)
     return data
 ss.game_data=load_game_data()
@@ -28,12 +28,12 @@ def load_users_list():
     return user_list
 @st.cache_data
 def load_pca_matrix():
-    with open("data/pca_matrix.pkl","rb") as f:
+    with open("UI/data/pca_matrix.pkl","rb") as f:
         data=pickle.load(f)
     return data
 @st.cache_data
 def tag_sim_load():
-    with open("data/sim_matrix.pkl","rb") as tag_sim_pkl:
+    with open("UI/data/sim_matrix.pkl","rb") as tag_sim_pkl:
         return pickle.load(tag_sim_pkl)
 ss.tag_sim=tag_sim_load()
 ss.reduced_games=reduced_game_load()
