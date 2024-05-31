@@ -1,3 +1,4 @@
+import sys
 import os
 import json
 from typing import Literal
@@ -10,8 +11,15 @@ DataFrame = pd.DataFrame
 NDArray = np.ndarray
 
 # Settings
-data_folder = "./data"
-source_folder = "./data/kaggle"
+data_folder = (
+    os.path.abspath(".")[
+        : os.path.abspath(".").rindex("HUST-Recommender-System-On-Steam")
+        + len("HUST-Recommender-System-On-Steam")
+    ]
+    + "\\data"
+)
+
+source_folder = os.path.join(data_folder, "kaggle")
 hours_intervals = [0.0, 2.0, 6.0, 14.1, 39.7]  # INF
 ratings = [2, 2.5, 3, 3.5, 4]
 
@@ -33,9 +41,7 @@ class Preprocessor:
                 break
         return from_hour + 2 * is_recommended - 1
 
-    def generate_data_folder(
-        review_limit: int = 40, folder: str = "./data/steam_40"
-    ) -> None:
+    def generate_data_folder(review_limit: int, folder: str) -> None:
         """Extract data from source based on review limit into a folder."""
         assert isinstance(review_limit, int)
         # Create directory if not exist
@@ -44,9 +50,11 @@ class Preprocessor:
 
         # Get data from source
         print("Loading data from source ", end=" ")
-        recommendations = pd.read_csv(source_folder + "/recommendations.csv")
-        games = pd.read_csv(source_folder + "/games.csv")
-        users = pd.read_csv(source_folder + "/users.csv")
+        recommendations = pd.read_csv(
+            os.path.join(source_folder, "recommendations.csv")
+        )
+        games = pd.read_csv(os.path.join(source_folder, "games.csv"))
+        users = pd.read_csv(os.path.join(source_folder, "users.csv"))
         print("Done")
 
         # Filter recommendation
@@ -75,7 +83,9 @@ class Preprocessor:
 
         # Filter metadata
         print("Filtering metadata       ", end=" ")
-        with open(source_folder + "/games_metadata.json", "r", encoding="utf8") as data:
+        with open(
+            os.path.join(source_folder, "games_metadata.json"), "r", encoding="utf8"
+        ) as data:
             line_count = 0
             with open(folder + "/games_metadata.json", "w", encoding="utf8") as file:
                 for line in data:
@@ -167,7 +177,10 @@ class Preprocessor:
 
 
 if __name__ == "__main__":
-    limit = int(input("Review limit: "))
-    folder_name = f"./data/steam_{limit}"
-    Preprocessor.generate_data_folder(limit, folder_name)
-    Preprocessor.generate_user_item_ratings(folder_name)
+    limit: int = 40
+    args = sys.argv
+    if len(args) == 2:
+        limit = int(args[1])
+    folder: str = os.path.join(data_folder, f"steam_{limit}")
+    Preprocessor.generate_data_folder(limit, folder)
+    Preprocessor.generate_user_item_ratings(folder)

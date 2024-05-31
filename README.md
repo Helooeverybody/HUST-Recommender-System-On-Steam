@@ -70,4 +70,16 @@ Due to the the disorganized nature of our project, the dataset is for each model
 
 ### [CF Neighborhood-based](CF/Neighborhood_Based_Model)
 
-### [CB and UI](SourceCode)
+This folder contain our implementation of memory-based Content Filtering system using neighborhood method with users / items similarity.
+
+    .
+    ├── preprocessing.py                    # Preprocessor class used for generating ratings data from source (./data/kaggle) and data splitter
+    ├── mapping.py                          # Mapper class using json data to map users and items
+    ├── similarity.py                       # Similarity class containing methods to calculate similarity between users or items.
+    ├── topk_cf.py                          # TopKNeighborCF system itself
+    ├── TopKCF_Testing.ipynb                # Notebook for testing TopKNeighborCF
+    └── TopKCF_Demo.ipynb                   # Notebook containing the full module usage
+
+Initially, this system is implemented as a module; however, it is not used for the final UI demonstration. It's usage can be found in [TopKCF_Demo.ipynb ](CF/Neighborhood_Based_Model/TopKCF_Demo.ipynb).
+
+### [Content-based and UI](SourceCode)
