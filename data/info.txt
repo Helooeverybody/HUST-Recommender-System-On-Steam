@@ -1,0 +1,19 @@
+- Please download the source data from kaggle first.
+  link: https://husteduvn-my.sharepoint.com/:u:/g/personal/dat_tht225482_sis_hust_edu_vn/EQuBjvTBT3NJhLDpBmbtZNIB-syFvGcmxWVLUkg6HQ0Iyg?e=fAi6lZ
+
+- Run the Preprocess/preprocessing.py file to generate data.
+
+data
+    |- kaggle                : source data (must be downloaded first)
+    |- steam_{limit}         : sample data (extracted using preprocessing.py)
+    Ex: steam_40 will have >=40 reviews for each users
+
+Folder structure: 
+    | <common: must contain>
+    |- games.csv             : filtered games data
+    |- users.csv             : filtered users data
+    |- recommendations.csv   : filtered recommendations
+    |- games_metadata.json   : filtered games metadata
+    | <TopKCF>
+    |- mapping.json          : mapping for CF
+    |- user_item_data.txt    : user-item-rating data
