@@ -64,7 +64,7 @@ Due to the the disorganized nature of our project, the dataset is for each model
 
 ## Usage
 
-### [LF Deep-based](CF/Latent_Factor_Model)
+### [LF Deep-based](SourceCode/CF/Latent_Factor_Model)
 
     .
     ├── predict_demo.py         # implement predict with three models, NCF (implicit), NeuMF (implicit), NCF_Features (explicit)
@@ -78,7 +78,7 @@ Due to the the disorganized nature of our project, the dataset is for each model
     ├── NeuMF.ipynb             # implement training NeuMF model
     └── NCF_Feature.ipynb       # implemnt training NCF_feature
 
-### [LF Matrix Factorization](CF/Latent_Factor_Model/MatrixFactorization)
+### [LF Matrix Factorization](SourceCode/CF/Latent_Factor_Model/MatrixFactorization)
 
     .
     ├── EDA.py                  # analysis data and explain why to transform from implicit feedback rating to explicit feedback
@@ -91,7 +91,7 @@ Due to the the disorganized nature of our project, the dataset is for each model
         └── CMF.ipynb                       # implement collective matrix factorization model,
                                               with file utility_cmf.py is  a helper modulus filefile
 
-### [CF Neighborhood-based](CF/Neighborhood_Based_Model)
+### [CF Neighborhood-based](SourceCode/CF/Neighborhood_Based_Model)
 
 This folder contain our implementation of memory-based Content Filtering system using neighborhood method with users / items similarity.
 
@@ -103,9 +103,9 @@ This folder contain our implementation of memory-based Content Filtering system 
     ├── TopKCF_Testing.ipynb    # Notebook for testing TopKNeighborCF
     └── TopKCF_Demo.ipynb       # Notebook containing the full module usage
 
-Initially, this system is implemented as a module; however, it is not used for the final UI demonstration. It's usage can be found in [TopKCF_Demo.ipynb](CF/Neighborhood_Based_Model/TopKCF_Demo.ipynb).
+Initially, this system is implemented as a module; however, it is not used for the final UI demonstration. It's usage can be found in [TopKCF_Demo.ipynb](SourceCode/CF/Neighborhood_Based_Model/TopKCF_Demo.ipynb).
 
-### [Content-based](CB)
+### [Content-based](SourceCode/CB)
 
 This folder contain our implementation of content-based filtering using 2 main approaches unsupervised learning and supervised learning.
 
@@ -117,7 +117,7 @@ This folder contain our implementation of content-based filtering using 2 main a
     ├── supervised_cbf.ipynb        # including the implementation of Ridge, Lasso and Random Forest Regression for predicting user ratings
     └── unsupervised_cbf.ipynb      # including the implementation of Cosine Similarity KNN and Kmeans for finding similar games to a given game
 
-### [UI](UI)
+### [UI](SourceCode/UI)
 
 Our UI is coded based on the library streamlit. To run the UI, from the root folder of this project type in your terminal "streamlit run SourceCode/UI/start.py"
 The UI currently only has Content-based filtering for demonstration. It involves two main tabs "Search" and "Recommendation". In search, you can choose either Cosine Similarity KNN or Kmeans to search for similar games for a game. In recommendation, you can choose an User ID from our data, it will display the profile of that user (the games he likes the most and hates the most) then you can choose a supervised algorithm to recommend games for that users.
