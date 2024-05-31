@@ -65,9 +65,20 @@ Due to the the disorganized nature of our project, the dataset is for each model
 ## Usage
 
 ### [LF Deep-based](CF/Latent_Factor_Model)
-
+    .
+    |__ predict_demo.py         # implement predict with three models, NCF (implicit), NeuMF (implicit), NCF_Features (explicit)
+    |__ NCF.py                  # structure of NCF 
+    |__ NeuMF.py                # structure of NeuMF
+    |__ NCF_Feature.py          # structure of NCF_Feature
+    |__ Data_processing.ipynb   # implement data process for deep, note that data after process saving in pickle file because of having vector in data frame, and some 
+                                 feature selection explains in process_data of matrix_factorization 
+    |__ NCF.ipynb               # implement training NCF model 
+    |__ NeuMF.ipynb             # implement training NeuMF model 
+    |__ NCF_Feature.ipynb       # implemnt training NCF_feature 
 ### [LF Matrix Factorization](CF/Latent_Factor_Model/MatrixFactorization)
-
+    .
+    |__ EDA.py                 # analysis data and explain why to transform from implicit feedback rating to explicit feedback 
+    |__ data_processing.py     # process data for training model of matrix_factorization
 ### [CF Neighborhood-based](CF/Neighborhood_Based_Model)
 
 This folder contain our implementation of memory-based Content Filtering system using neighborhood method with users / items similarity.

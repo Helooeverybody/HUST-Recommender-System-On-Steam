@@ -11,13 +11,12 @@ DataFrame = pd.DataFrame
 NDArray = np.ndarray
 
 # Settings
-data_folder = (
-    os.path.abspath(".")[
-        : os.path.abspath(".").rindex("HUST-Recommender-System-On-Steam")
-        + len("HUST-Recommender-System-On-Steam")
-    ]
-    + "\\data"
-)
+working_path = os.path.abspath(".")
+index = os.path.abspath(".").find("SourceCode")
+if index >= 0:
+    data_folder = os.path.join(working_path[:index], "data")
+else:
+    data_folder = os.path.join(working_path, "data")
 
 source_folder = os.path.join(data_folder, "kaggle")
 hours_intervals = [0.0, 2.0, 6.0, 14.1, 39.7]  # INF
