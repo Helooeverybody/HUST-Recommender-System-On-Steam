@@ -82,4 +82,15 @@ This folder contain our implementation of memory-based Content Filtering system 
 
 Initially, this system is implemented as a module; however, it is not used for the final UI demonstration. It's usage can be found in [TopKCF_Demo.ipynb](CF/Neighborhood_Based_Model/TopKCF_Demo.ipynb).
 
-### [Content-based and UI](SourceCode)
+### [Content-based](CB)
+This folder contain our implementation of content-based filtering using 2 main approaches unsupervised learning and supervised learning
+    .
+    ├── data-preprocessing
+        ├── reduce_game.ipynb                 # reduce the game dataset
+        ├── data_preprocessing.ipynb          # prepocess data
+    ├── notebooks                               
+        ├── supervised_cbf.ipynb              # including the implementation of Ridge, Lasso and Random Forest Regression for predicting user ratings
+        ├── unsupervised_cbf.ipynb            # including the implementation of Cosine Similarity KNN and Kmeans for finding similar games to a given game
+### [UI](UI)
+Our UI is coded based on the library streamlit. To run the UI, from the root folder of this project type in your terminal "streamlit run SourceCode/UI/start.py"
+The UI currently only has Content-based filtering for demonstration. It involves two main tabs "Search" and "Recommendation". In search, you can choose either Cosine Similarity KNN or Kmeans to search for similar games for a game. In recommendation, you can choose an User ID from our data, it will display the profile of that user (the games he likes the most and hates the most) then you can choose a supervised algorithm to recommend games for that users.
