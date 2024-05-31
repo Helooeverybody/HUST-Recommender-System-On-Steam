@@ -1,0 +1,5 @@
+Folder structure:
+|- data_process : processed data, must be downloaded from here: https://husteduvn-my.sharepoint.com/:u:/g/personal/dat_tht225482_sis_hust_edu_vn/EbxdUmsHSnBHpz_v_IXv-IsBPemd2q9sLNJeURYvCgfXUA?e=iQcn27
+|- model_path
+|- modulus
+|- note_book
