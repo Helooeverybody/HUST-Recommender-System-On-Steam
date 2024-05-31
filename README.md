@@ -16,9 +16,22 @@ This project is marked as final as of **31/05/2024**. No further contribution is
 
 ## Description
 
+### Abstract
+
 Recommender systems represent a specialized field within machine learning, characterized by its unique attributes and evaluation methods. In this report, we aim to present fundamental approaches and initial perspectives on constructing a recommender system. We will employ methods specifically tailored to address this problem, such as the Content-Based Model (CB), which focuses on comparing the similarity between users or items, inspired by the human tendency for imitation. Additionally, we will explore basic machine learning models, such as the linear model, to experiment with recommender systems. Furthermore, we propose the use of Collaborative Filtering, featuring two main models: the Neighborhood-based model (NB) and the Latent-factor model (LF). While the NB model leverages user-user and item-item similarities based on ratings rather than attributes, as in the CB model, the Latent-factor model will find latent features based on observations, some approaches are implemented such as matrix factorization models, factorization machines, and certain deep learning techniques.\\
 
 Our project will utilize game data from Steam, instead of widely known datasets like MovieLens or Netflix films. This dataset includes features that can be considered labels, such as "is recommended"( implicit feedback) features and "hours" features. We will propose a strategy to combine these features to generate the most reasonable ratings possible, which we term explicit feedback. Furthermore, for simplicity, our project will not address the cold-start problem but will focus on resolving issues using a warm-start approach.
+
+### Project Structure
+
+.
+├── build # Compiled files (alternatively `dist`)
+├── docs # Documentation files (alternatively `doc`)
+├── src # Source files (alternatively `lib` or `app`)
+├── test # Automated tests (alternatively `spec` or `tests`)
+├── tools # Tools and utilities
+├── LICENSE
+└── README.md
 
 ## Setting up
 
@@ -32,7 +45,7 @@ pip install -r requirement.txt
 
 ### Dataset
 
-Due to the the disorganized nature of our project, the dataset is for each models is must be downloaded to its corresponding destination as listed below (despite having a separate data folder). The dataset can be found [here](https://husteduvn-my.sharepoint.com/:f:/g/personal/dat_tht225482_sis_hust_edu_vn/Ev0Vpc1zpzxMvNQ0ZLgRJI0BrLqyQ0uWEBUq8udKeVZGjA?e=1x14QL).
+Due to the the disorganized nature of our project, the dataset is for each models must be downloaded to its corresponding destination as listed below (despite having a separate data folder). The dataset can be found [here](https://husteduvn-my.sharepoint.com/:f:/g/personal/dat_tht225482_sis_hust_edu_vn/Ev0Vpc1zpzxMvNQ0ZLgRJI0BrLqyQ0uWEBUq8udKeVZGjA?e=1x14QL).
 
 `Steam Recommendation System`
 
@@ -42,3 +55,5 @@ Due to the the disorganized nature of our project, the dataset is for each model
 | data.zip              | ./SourceCode/CB                               | Dataset used for Content-based model and UI.                                     |
 | data_process.zip      | ./CF/Latent_Factor_Model/Deep_based           | Dataset used for Latent Factor Colaborative Filtering with Deep learning.        |
 | preprocessed_data.zip | ./CF/Latent_Factor_Model/MatrixFactorization/ | Dataset used for Latent Factor Colaborative Filtering with Matrix Factorization. |
+
+## Usage
