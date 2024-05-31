@@ -6,3 +6,4 @@ seaborn
 sklearn
 cmfrec
 torch
+streamlit
