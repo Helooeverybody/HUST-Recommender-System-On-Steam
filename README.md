@@ -80,6 +80,6 @@ This folder contain our implementation of memory-based Content Filtering system 
     ├── TopKCF_Testing.ipynb                # Notebook for testing TopKNeighborCF
     └── TopKCF_Demo.ipynb                   # Notebook containing the full module usage
 
-Initially, this system is implemented as a module; however, it is not used for the final UI demonstration. It's usage can be found in [TopKCF_Demo.ipynb ](CF/Neighborhood_Based_Model/TopKCF_Demo.ipynb).
+Initially, this system is implemented as a module; however, it is not used for the final UI demonstration. It's usage can be found in [TopKCF_Demo.ipynb](CF/Neighborhood_Based_Model/TopKCF_Demo.ipynb).
 
 ### [Content-based and UI](SourceCode)
