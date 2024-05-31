@@ -79,6 +79,12 @@ Due to the the disorganized nature of our project, the dataset is for each model
     .
     |__ EDA.py                 # analysis data and explain why to transform from implicit feedback rating to explicit feedback 
     |__ data_processing.py     # process data for training model of matrix_factorization
+    
+    |__ MFnoSideinfo __|-- BRR_MF      # implement model matrix factorization BRR
+                       |-- 
+                       
+    |__ MFSideinfo   __|--
+                       |--
 ### [CF Neighborhood-based](CF/Neighborhood_Based_Model)
 
 This folder contain our implementation of memory-based Content Filtering system using neighborhood method with users / items similarity.
