@@ -55,12 +55,12 @@ Due to the the disorganized nature of our project, the dataset is for each model
 
 `Steam Recommendation System`
 
-| File                  | Destination                                   | Description                                                                      |
-| :-------------------- | :-------------------------------------------- | :------------------------------------------------------------------------------- |
-| kaggle.zip            | ./data                                        | The original dataset that we used for this project, citation is provided.        |
-| data.zip              | ./SourceCode/CB                               | Dataset used for Content-based model and UI.                                     |
-| data_process.zip      | ./CF/Latent_Factor_Model/Deep_based           | Dataset used for Latent Factor Colaborative Filtering with Deep learning.        |
-| preprocessed_data.zip | ./CF/Latent_Factor_Model/MatrixFactorization/ | Dataset used for Latent Factor Colaborative Filtering with Matrix Factorization. |
+| File                  | Destination                                             | Description                                                                      |
+| :-------------------- | :------------------------------------------------------ | :------------------------------------------------------------------------------- |
+| kaggle.zip            | ./data                                                  | The original dataset that we used for this project, citation is provided.        |
+| data.zip              | ./SourceCode/CB                                         | Dataset used for Content-based model and UI.                                     |
+| data_process.zip      | ./SourceCode/CF/Latent_Factor_Model/Deep_based          | Dataset used for Latent Factor Colaborative Filtering with Deep learning.        |
+| preprocessed_data.zip | ./SourceCode/CF/Latent_Factor_Model/MatrixFactorization | Dataset used for Latent Factor Colaborative Filtering with Matrix Factorization. |
 
 ## Usage
 
@@ -81,14 +81,15 @@ Due to the the disorganized nature of our project, the dataset is for each model
 ### [LF Matrix Factorization](CF/Latent_Factor_Model/MatrixFactorization)
 
     .
-    |__ EDA.py                 # analysis data and explain why to transform from implicit feedback rating to explicit feedback
-    |__ data_processing.py     # process data for training model of matrix_factorization
-
-    |__ MFnoSideinfo __|-- BRR_MF      # implement model matrix factorization BRR
-                       |-- other file # implement 4 simple algorithms of matrix factorization
-
-    |__ MFSideinfo   __|-- FactorizationMachine folder # implement the fm model
-                       |-- CMF.ipynb # implement collective matrix factorization model,  with file utility_cmf.py is  a helper modulus filefile
+    ├── EDA.py                  # analysis data and explain why to transform from implicit feedback rating to explicit feedback
+    ├── data_processing.py      # process data for training model of matrix_factorization
+    ├── MFnoSideinfo
+    |   ├── BRR_MF              # implement model matrix factorization BRR
+    |   └── other files         # implement 4 simple algorithms of matrix factorization
+    └── MFSideinfo
+        ├── FactorizationMachine folder     # implement the fm model
+        └── CMF.ipynb                       # implement collective matrix factorization model,
+                                              with file utility_cmf.py is  a helper modulus filefile
 
 ### [CF Neighborhood-based](CF/Neighborhood_Based_Model)
 
