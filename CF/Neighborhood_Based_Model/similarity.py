@@ -4,6 +4,7 @@ from scipy.stats import spearmanr
 from scipy.sparse import csr_matrix
 from typing import Callable, Literal
 
+# Typing
 NDArray = np.ndarray
 
 

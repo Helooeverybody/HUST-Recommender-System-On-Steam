@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from scipy.sparse import csr_matrix
 
-# Typing alias
+# Typing
 NDArray = np.ndarray
 DataFrame = pd.DataFrame
 
