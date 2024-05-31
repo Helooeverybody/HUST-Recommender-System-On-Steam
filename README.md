@@ -58,7 +58,8 @@ Due to the the disorganized nature of our project, the dataset is for each model
 | File                  | Destination                                             | Description                                                                      |
 | :-------------------- | :------------------------------------------------------ | :------------------------------------------------------------------------------- |
 | kaggle.zip            | ./data                                                  | The original dataset that we used for this project, citation is provided.        |
-| data.zip              | ./SourceCode/CB                                         | Dataset used for Content-based model and UI.                                     |
+| cb_data.zip           | ./SourceCode/CB                                         | Dataset used for Content-based model.                                            |
+| ui_data.zip           | ./SourceCode/UI                                         | Dataset used for UI.                                                             |
 | data_process.zip      | ./SourceCode/CF/Latent_Factor_Model/Deep_based          | Dataset used for Latent Factor Colaborative Filtering with Deep learning.        |
 | preprocessed_data.zip | ./SourceCode/CF/Latent_Factor_Model/MatrixFactorization | Dataset used for Latent Factor Colaborative Filtering with Matrix Factorization. |
 
