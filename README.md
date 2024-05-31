@@ -66,13 +66,15 @@ Due to the the disorganized nature of our project, the dataset is for each model
 
 ### [LF Deep-based](CF/Latent_Factor_Model)
     .
-    |__ predict_demo.py # implement predict with three models, NCF (implicit), NeuMF (implicit), NCF_Features (explicit)
-    |__ NCF.py          # structure of NCF 
-    |__ NeuMF.py        # structure of NeuMF
-    |__ NCF_Feature.py  # structure of NCF_Feature
-    |__ NCF.ipynb       # implement training NCF model 
-    |__ NeuMF.ipynb     # implement training NeuMF model 
-    |__ NCF_Feature.ipynb # implemnt training NCF_feature 
+    |__ predict_demo.py         # implement predict with three models, NCF (implicit), NeuMF (implicit), NCF_Features (explicit)
+    |__ NCF.py                  # structure of NCF 
+    |__ NeuMF.py                # structure of NeuMF
+    |__ NCF_Feature.py          # structure of NCF_Feature
+    |__ Data_processing.ipynb   # implement data process for deep, note that data after process saving in pickle file because of having vector in data frame, and some 
+                                 feature selection explains in process_data.ipynb of matrix_factorization 
+    |__ NCF.ipynb               # implement training NCF model 
+    |__ NeuMF.ipynb             # implement training NeuMF model 
+    |__ NCF_Feature.ipynb       # implemnt training NCF_feature 
 ### [LF Matrix Factorization](CF/Latent_Factor_Model/MatrixFactorization)
 
 ### [CF Neighborhood-based](CF/Neighborhood_Based_Model)
