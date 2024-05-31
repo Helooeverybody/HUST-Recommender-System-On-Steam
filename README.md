@@ -71,42 +71,44 @@ Due to the the disorganized nature of our project, the dataset is for each model
     ├── NCF.py                  # structure of NCF
     ├── NeuMF.py                # structure of NeuMF
     ├── NCF_Feature.py          # structure of NCF_Feature
-    ├── Data_processing.ipynb   # implement data process for deep, note that data after process saving in pickle file because of having vector in data frame, and some
-                                    feature selection explains in process_data of matrix_factorization
+    ├── Data_processing.ipynb   # implement data process for deep, note that data after process saving in pickle file because
+    |                             of having vector in data frame, and some feature selection explains in process_data
+    |                             of matrix_factorization
     ├── NCF.ipynb               # implement training NCF model
     ├── NeuMF.ipynb             # implement training NeuMF model
-    |__ NCF_Feature.ipynb       # implemnt training NCF_feature
+    └── NCF_Feature.ipynb       # implemnt training NCF_feature
 
 ### [LF Matrix Factorization](CF/Latent_Factor_Model/MatrixFactorization)
 
     .
-    |__ EDA.py                 # analysis data and explain why to transform from implicit feedback rating to explicit feedback
-    |__ data_processing.py     # process data for training model of matrix_factorization
+    ├── EDA.py                  # Analysis data and explain why to transform from implicit feedback rating to explicit feedback
+    └── data_processing.py      # Process data for training model of matrix_factorization
 
 ### [CF Neighborhood-based](CF/Neighborhood_Based_Model)
 
 This folder contain our implementation of memory-based Content Filtering system using neighborhood method with users / items similarity.
 
     .
-    ├── preprocessing.py                    # Preprocessor class used for generating ratings data from source (./data/kaggle) and data splitter
-    ├── mapping.py                          # Mapper class using json data to map users and items
-    ├── similarity.py                       # Similarity class containing methods to calculate similarity between users or items.
-    ├── topk_cf.py                          # TopKNeighborCF system itself
-    ├── TopKCF_Testing.ipynb                # Notebook for testing TopKNeighborCF
-    └── TopKCF_Demo.ipynb                   # Notebook containing the full module usage
+    ├── preprocessing.py        # Preprocessor class used for generating ratings data from source (./data/kaggle) and data splitter
+    ├── mapping.py              # Mapper class using json data to map users and items
+    ├── similarity.py           # Similarity class containing methods to calculate similarity between users or items.
+    ├── topk_cf.py              # TopKNeighborCF system itself
+    ├── TopKCF_Testing.ipynb    # Notebook for testing TopKNeighborCF
+    └── TopKCF_Demo.ipynb       # Notebook containing the full module usage
 
 Initially, this system is implemented as a module; however, it is not used for the final UI demonstration. It's usage can be found in [TopKCF_Demo.ipynb](CF/Neighborhood_Based_Model/TopKCF_Demo.ipynb).
 
 ### [Content-based](CB)
 
-This folder contain our implementation of content-based filtering using 2 main approaches unsupervised learning and supervised learning
-.
-├── data-preprocessing
-├── reduce_game.ipynb # reduce the game dataset
-├── data_preprocessing.ipynb # prepocess data
-├── notebooks  
- ├── supervised_cbf.ipynb # including the implementation of Ridge, Lasso and Random Forest Regression for predicting user ratings
-├── unsupervised_cbf.ipynb # including the implementation of Cosine Similarity KNN and Kmeans for finding similar games to a given game
+This folder contain our implementation of content-based filtering using 2 main approaches unsupervised learning and supervised learning.
+
+    .
+    ├── data-preprocessing
+    ├── reduce_game.ipynb           # reduce the game dataset
+    ├── data_preprocessing.ipynb    # prepocess data
+    ├── notebooks
+    ├── supervised_cbf.ipynb        # including the implementation of Ridge, Lasso and Random Forest Regression for predicting user ratings
+    └── unsupervised_cbf.ipynb      # including the implementation of Cosine Similarity KNN and Kmeans for finding similar games to a given game
 
 ### [UI](UI)
 
