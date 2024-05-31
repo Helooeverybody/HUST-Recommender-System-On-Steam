@@ -81,9 +81,9 @@ Due to the the disorganized nature of our project, the dataset is for each model
     |__ data_processing.py     # process data for training model of matrix_factorization
     
     |__ MFnoSideinfo __|-- BRR_MF      # implement model matrix factorization BRR
-                       |-- 
+                       |-- other file # implement 4 simple algorithm of matrix factorization 
                        
-    |__ MFSideinfo   __|--
+    |__ MFSideinfo   __|-- 
                        |--
 ### [CF Neighborhood-based](CF/Neighborhood_Based_Model)
 
