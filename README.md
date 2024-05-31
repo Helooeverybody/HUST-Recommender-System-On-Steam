@@ -6,10 +6,10 @@
 
 ### Requirement
 
-The requirement for this project is listed in [requirement.txt](requirement.txt). Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+The requirement for this project is listed in [requirement.txt](requirement.txt), please use the package manager [pip](https://pip.pypa.io/en/stable/) to install.
 
 ```bash
-pip install foobar
+pip install -r requirement.txt
 ```
 
 ### Dataset
