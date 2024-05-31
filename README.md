@@ -81,8 +81,14 @@ Due to the the disorganized nature of our project, the dataset is for each model
 ### [LF Matrix Factorization](CF/Latent_Factor_Model/MatrixFactorization)
 
     .
-    ├── EDA.py                  # Analysis data and explain why to transform from implicit feedback rating to explicit feedback
-    └── data_processing.py      # Process data for training model of matrix_factorization
+    |__ EDA.py                 # analysis data and explain why to transform from implicit feedback rating to explicit feedback
+    |__ data_processing.py     # process data for training model of matrix_factorization
+
+    |__ MFnoSideinfo __|-- BRR_MF      # implement model matrix factorization BRR
+                       |-- other file # implement 4 simple algorithms of matrix factorization
+
+    |__ MFSideinfo   __|-- FactorizationMachine folder # implement the fm model
+                       |-- CMF.ipynb # implement collective matrix factorization model,  with file utility_cmf.py is  a helper modulus filefile
 
 ### [CF Neighborhood-based](CF/Neighborhood_Based_Model)
 
