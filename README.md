@@ -25,13 +25,16 @@ Our project will utilize game data from Steam, instead of widely known datasets 
 ### Project Structure
 
     .
-    ├── build                   # Compiled files (alternatively `dist`)
-    ├── docs                    # Documentation files (alternatively `doc`)
-    ├── src                     # Source files (alternatively `lib` or `app`)
-    ├── test                    # Automated tests (alternatively `spec` or `tests`)
+    ├── data                            # Main database (not really as explained in [Dataset](Dataset))
+    ├── CF                              # Collaborative Filtering
+    |   ├── Latent_Factor_Model
+    |   |   ├── Deep_based              # Model-based CF using Deep Learing
+    |   |   └── MatrixFactorization     # Model-based CF using Matrix Factorization
+    |   └── Neighborhood_Based_Model    # Memory-based CF using top k neighbours from similarity
     ├── SourceCode
     |   ├── CB
     |   └── UI
+    ├── rating_trans.py
     ├── README.md
     └── requirement.txt
 
