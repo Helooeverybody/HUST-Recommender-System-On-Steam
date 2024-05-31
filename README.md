@@ -83,8 +83,8 @@ Due to the the disorganized nature of our project, the dataset is for each model
     |__ MFnoSideinfo __|-- BRR_MF      # implement model matrix factorization BRR
                        |-- other file # implement 4 simple algorithm of matrix factorization 
                        
-    |__ MFSideinfo   __|-- 
-                       |--
+    |__ MFSideinfo   __|-- FactorizationMachine folder # implement the fm model 
+                       |-- CMF.ipynb # implement collective matrix factorization model,  with file  is helper modulus 
 ### [CF Neighborhood-based](CF/Neighborhood_Based_Model)
 
 This folder contain our implementation of memory-based Content Filtering system using neighborhood method with users / items similarity.
